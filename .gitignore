@@ -118,3 +118,5 @@ local.properties
 
 # Ignorer les logs des map
 output/
+!maps
+!maps/Island.scala

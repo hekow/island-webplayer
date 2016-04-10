@@ -11,7 +11,7 @@ var motX = 1, motY = 0;
 
 var direction = "E";
 var tile_size = 10;
-var lastAction = "echo";
+var lastAction ="none";
 var chunks = {};
 
 var budget = 0;
@@ -29,10 +29,13 @@ var frameNumber = 0;
 var div_contracts;
 var contracts = {};
 
+var schedules = {};
+var scheduleId = 0;
+
 //Let's initialize the canvas and load the context
 function initialize(json) {
     clearBoard();
-    lastAction = "echo";
+    lastAction = "none";
     chunks = {};
     creeks = {};
 
@@ -42,9 +45,9 @@ function initialize(json) {
     locX = parseInt($("#locX").val()/3);
     locY = parseInt($("#locY").val()/3);
 
-    direction = json.heading;
-    budget = json.budget;
-    men = json.men;
+    direction = json.data.heading;
+    budget = json.data.budget;
+    men = json.data.men;
 
     div_contracts.innerHTML = "";
     updateMotion(direction);
@@ -100,8 +103,7 @@ function printMapPart(src,x,y, size) {
     },obj);
 }
 
-var schedules = {};
-var scheduleId = 0;
+
 
 function addToSchedule(funct,obj) {
     schedules[scheduleId] = [funct,obj];
@@ -207,7 +209,7 @@ function start(loadedJson) {
         initialize(loadedJson);
         $("#input_map").val("");
         $("#input_map_pic").val("");
-        handleJson(loadedJson);
+
 
         contracts =loadedJson.data.contracts;
         div_contracts.innerHTML = "";
@@ -218,6 +220,8 @@ function start(loadedJson) {
             updateContract(contract.resource, 0);
             updateBudget();
         }
+
+       // handleJson(loadedJson);
     }, 50);
 }
 

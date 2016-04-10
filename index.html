@@ -41,9 +41,9 @@
                 <option value="echo">Echo</option>
                 <option value="stop">Stop</option>
                 <option value="scan">Scan</option>
-                <option value="land">Echo</option>
+                <option value="land">Land</option>
             </select>
-            <br/>
+
 
             <select size="5" name="parameters[direction]">
                 <option value="N">N</option>
@@ -52,12 +52,11 @@
                 <option value="W">W</option>
                 <option value="">none</option>
             </select>
-            <p><input type="submit"/></p>
+            <p><input type="submit" value="Valider Action"/></p>
+            <textarea rows="2" cols="50" id="result">
+            </textarea>
+            <input type="button" value="EnvoyerAction" id="poke"/>
         </form>
-        <textarea rows="4" cols="50" id="result">
-        </textarea>
-        <input type="button" value="EnvoyerAction" id="poke"/>
-        <script type="application/javascript"></script>
     </div>
 
     <form>
