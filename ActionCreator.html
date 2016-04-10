@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>ActionCreator</title>
+    <style>form {
+        line-height: 2em;
+    }
+    p {
+        margin: 5px 0;
+    }
+    h2 {
+        margin: 10px 0;
+        font-size: 1.2em;
+        font-weight: bold
+    }
+    #result {
+        margin: 10px;
+        background: #eee;
+        padding: 10px;
+        height: 40px;
+        overflow: auto;
+    }
+    </style>
+</head>
+
+<body>
+<h2>Form</h2>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script src="bower_components/jquery-serialize-object/jquery.serialize-object.js"></script>
+
+<script type="text/javascript">
+
+$(function() {
+    $('form').submit(function() {
+        var jsonaction = $('form#sendaction').serializeJSON();
+        console.log('k')
+        $('#result').val(jsonaction);
+        return false;
+    });
+});
+</script>
+<form id="sendaction">
+    <select name="action">
+    <option value="fly">Fly</option>
+    <option value="heading">Heading</option>
+    <option value="echo">Echo</option></select>
+    <br/>
+
+    <select size="5" name="parameters[direction]">
+        <option value="N">N</option>
+        <option value="S">S</option>
+        <option value="E">E</option>
+        <option value="W">W</option>
+        <option value="">none</option></select>
+    <p><input type="submit" /></p>
+</form>
+<h2>JSON</h2>
+<textarea rows="4" cols="50"  id="result">
+    </textarea>
+
+
+</body>
+</html>

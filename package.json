@@ -1,0 +1,22 @@
+{
+  "name": "islandplayer",
+  "version": "1.0.0",
+  "description": "a player using sockets to play the island programming game",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "dependencies": {
+    "socket.io": "^1.4.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://pol-jacquo@atlas.i3s.unice.fr/stash/scm/qbd/private.git"
+  },
+  "author": "hekow",
+  "license": "ISC"
+}
